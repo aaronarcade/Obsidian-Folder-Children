@@ -1,0 +1,9 @@
+{
+	"id": "folder-children",
+	"name": "Folder Children",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Sync each folder's direct children into a Children callout on its folder note. Requires Folder Notes.",
+	"author": "Aaron Brown",
+	"isDesktopOnly": false
+}
