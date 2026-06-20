@@ -11,8 +11,8 @@ export default class FolderChildrenPlugin extends Plugin {
 		});
 
 		this.addCommand({
-			id: "sync-folder-children",
-			name: "Sync folder children lists",
+			id: "sync-children",
+			name: "Sync children lists",
 			callback: () => {
 				void this.openPreview();
 			},

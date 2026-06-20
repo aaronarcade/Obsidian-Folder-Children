@@ -48,14 +48,14 @@ function joinPath(dir: string, file: string): string {
 	return `${dir}/${file}`;
 }
 
-function shouldSkipFolder(folder: TFolder): boolean {
+function shouldSkipFolder(folder: TFolder, configDir: string): boolean {
 	if (!folder.path) {
 		return true;
 	}
 	if (isHidden(folder.name)) {
 		return true;
 	}
-	if (folder.path === ".obsidian" || folder.path.startsWith(".obsidian/")) {
+	if (folder.path === configDir || folder.path.startsWith(`${configDir}/`)) {
 		return true;
 	}
 	return false;
@@ -234,7 +234,7 @@ export async function planChildrenSync(app: App): Promise<PlanResult> {
 		.filter((file): file is TFolder => file instanceof TFolder);
 
 	for (const folder of folders) {
-		if (shouldSkipFolder(folder)) {
+		if (shouldSkipFolder(folder, vault.configDir)) {
 			continue;
 		}
 
